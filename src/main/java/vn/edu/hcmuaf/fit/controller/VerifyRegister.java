@@ -43,4 +43,9 @@ public class VerifyRegister extends HttpServlet {
             }
         }
     }
+
+    public static void main(String[] args) {
+        System.out.println(BCrypt.hashpw("123456789", BCrypt.gensalt()));
+        System.out.println(BCrypt.checkpw("123456789", "$2a$10$QbDRao5.k93ADs4crzvaA.D.nBXoybbRmlYVZX6w1a/jHN.eYmAC6"));
+    }
 }
