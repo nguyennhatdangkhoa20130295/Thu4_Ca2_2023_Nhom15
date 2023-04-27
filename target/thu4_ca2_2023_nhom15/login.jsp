@@ -30,25 +30,22 @@
       <div class="card shadow-none border-0 ms-auto me-auto login-card">
         <div class="card-body rounded-0 text-left">
           <h2 class="fw-700 display1-size display2-md-size mb-3">Login into <br>your account</h2>
-          <form>
+          <form form action="http://139.180.129.238:5501/api/users" method="post">
 
             <div class="form-group icon-input mb-3">
               <i class="font-sm ti-email text-grey-500 pe-0"></i>
-              <input type="text" class="style2-input ps-5 form-control text-grey-900 font-xsss fw-600" placeholder="Username">
+              <input name="uname"  type="text" class="style2-input ps-5 form-control text-grey-900 font-xsss fw-600" placeholder="Username">
             </div>
             <div class="form-group icon-input mb-1">
-              <input type="Password" class="style2-input ps-5 form-control text-grey-900 font-xss ls-3" placeholder="Password">
+              <input name="passw" type="Password" class="style2-input ps-5 form-control text-grey-900 font-xss ls-3" placeholder="Password">
               <i class="font-sm ti-lock text-grey-500 pe-0"></i>
             </div>
-            <div class="form-check text-left mb-3">
-              <input type="checkbox" class="form-check-input mt-2" id="exampleCheck5">
-              <label class="form-check-label font-xsss text-grey-500" for="exampleCheck5">Remember me</label>
-              <a href="forgot.html" class="fw-600 font-xsss text-grey-700 mt-1 float-right">Forgot your Password?</a>
+            <div class=" text-left mb-3">
+              <div class="form-group mb-1"><button type="submit" class="form-control text-center style2-input text-white fw-600 bg-dark border-0 p-0 ">Login</button></div>
             </div>
           </form>
 
           <div class="col-sm-12 p-0 text-left">
-            <div class="form-group mb-1"><a href="#" class="form-control text-center style2-input text-white fw-600 bg-dark border-0 p-0 ">Login</a></div>
             <h6 class="text-grey-500 font-xsss fw-500 mt-0 mb-0 lh-32">Dont have account <a href="register.jsp" class="fw-700 ms-1">Register</a></h6>
           </div>
           <div class="col-sm-12 p-0 text-center mt-2">
@@ -62,7 +59,7 @@
     </div>
   </div>
 </div>
-<%@include file="footer.jsp"%>
+<!-- <%@include file="footer.jsp"%> -->
 
 <!-- Modal Login -->
 <div class="modal bottom fade" style="overflow-y: scroll;" id="Modallogin" tabindex="-1" role="dialog">
@@ -73,25 +70,24 @@
         <div class="card shadow-none rounded-0 w-100 p-2 pt-3 border-0">
           <div class="card-body rounded-0 text-left p-3">
             <h2 class="fw-700 display1-size display2-md-size mb-4">Login into <br>your account</h2>
-            <form>
+            <form action="http://139.180.129.238:5501/api/users/login" method="post">
 
               <div class="form-group icon-input mb-3">
                 <i class="font-sm ti-email text-grey-500 pe-0"></i>
-                <input type="text" class="style2-input ps-5 form-control text-grey-900 font-xsss fw-600" placeholder="Your Email Address">
+                <input name="uname" type="text" class="style2-input ps-5 form-control text-grey-900 font-xsss fw-600" placeholder="Your Email Address">
               </div>
               <div class="form-group icon-input mb-1">
-                <input type="Password" class="style2-input ps-5 form-control text-grey-900 font-xss ls-3" placeholder="Password">
+                <input name="passw" type="Password" class="style2-input ps-5 form-control text-grey-900 font-xss ls-3" placeholder="Password">
                 <i class="font-sm ti-lock text-grey-500 pe-0"></i>
               </div>
-              <div class="form-check text-left mb-3">
-                <input type="checkbox" class="form-check-input mt-2" id="exampleCheck2">
-                <label class="form-check-label font-xsss text-grey-500" for="exampleCheck2">Remember me</label>
+              <div class="text-left mb-3">
+                <div class="form-group mb-1"><a href="#" class="form-control text-center style2-input text-white fw-600 bg-dark border-0 p-0 ">Login</a></div>
                 <a href="forgot.html" class="fw-600 font-xsss text-grey-700 mt-1 float-right">Forgot your Password?</a>
               </div>
             </form>
 
             <div class="col-sm-12 p-0 text-left">
-              <div class="form-group mb-1"><a href="#" class="form-control text-center style2-input text-white fw-600 bg-dark border-0 p-0 ">Login</a></div>
+
               <h6 class="text-grey-500 font-xsss fw-500 mt-0 mb-0 lh-32">Dont have account <a href="register.jsp" class="fw-700 ms-1">Register</a></h6>
             </div>
             <div class="col-sm-12 p-0 text-center mt-3 ">

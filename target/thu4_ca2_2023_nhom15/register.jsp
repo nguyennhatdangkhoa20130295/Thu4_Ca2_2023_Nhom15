@@ -43,7 +43,7 @@
                             <i class="font-sm ti-user text-grey-500 pe-0"></i>
                             <input type="text" name="username" maxlength="30"
                                    class="style2-input ps-5 form-control text-grey-900 font-xsss fw-600"
-                                   placeholder="Tên đăng nhập">
+                                   placeholder="Tên đăng nhập" required>
                             <%if (request.getAttribute("errorUsername") != null) {%>
                             <div class="note" style="color: red"><span><%=request.getAttribute("errorUsername")%></span></div>
                             <%} else {%>
@@ -54,14 +54,14 @@
                             <i class="font-sm ti-email text-grey-500 pe-0"></i>
                             <input type="email" name="email"
                                    class="style2-input ps-5 form-control text-grey-900 font-xsss fw-600"
-                                   placeholder="Email của bạn">
+                                   placeholder="Email của bạn" required>
                             <p style="color: red; margin: 10px 0 10px 10px;"><%=request.getAttribute("errorEmail") != null ? request.getAttribute("errorEmail") : ""%>
                             </p>
                         </div>
                         <div class="form-group icon-input mb-3">
                             <input type="password" name="password" maxlength="16"
                                    class="style2-input ps-5 form-control text-grey-900 font-xss ls-3"
-                                   placeholder="Mật khẩu">
+                                   placeholder="Mật khẩu" required>
                             <i class="font-sm ti-lock text-grey-500 pe-0"></i>
                             <%if (request.getAttribute("errorPassword") != null) {%>
                             <div class="note" style="color: red"><span><%=request.getAttribute("errorPassword")%></span></div>
@@ -72,7 +72,7 @@
                         <div class="form-group icon-input mb-3">
                             <input type="password" name="confirm_pass" maxlength="16"
                                    class="style2-input ps-5 form-control text-grey-900 font-xss ls-3"
-                                   placeholder="Xác nhận mật khẩu">
+                                   placeholder="Xác nhận mật khẩu" required>
                             <i class="font-sm ti-lock text-grey-500 pe-0"></i>
                             <p style="color: red; margin: 10px 0 10px 10px;"><%=request.getAttribute("errorConfirmPass") != null ? request.getAttribute("errorConfirmPass") : ""%>
                             </p>

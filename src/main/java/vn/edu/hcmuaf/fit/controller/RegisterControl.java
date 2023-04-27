@@ -45,74 +45,47 @@ public class RegisterControl extends HttpServlet {
         User user = RegisterService.getInstance().checkUser(username, email);
         if (user == null) {
             if (validateUsername(username) && validateEmail(email) && validatePassword(password) && validatePassword(confirmPassword) && confirmPassword.equals(password)) {
-                UserRegister userRegister = new UserRegister(username, email, password, code);
+                UserRegister userRegister = new UserRegister(username, email, hashPassword(password), code);
                 boolean test = mailService.sendEmail(userRegister);
                 if (test) {
                     HttpSession session = request.getSession();
                     session.setAttribute("authcode", userRegister);
                     response.sendRedirect("verify_register.jsp");
                 } else {
-                    System.out.println("Gửi mã qua email thành công");
+                    System.out.println("Gửi mã qua email không thành công");
                 }
             } else {
-                if (username.equals("")) {
-                    request.setAttribute("errorUsername", "Vui lòng nhập tên đăng nhập");
-                    request.getRequestDispatcher("register.jsp").forward(request, response);
-                    return;
-                } else if (username.length() < 8 || username.length() > 30) {
-                    request.setAttribute("errorUsername", "Xin lỗi tên đăng nhập phải nằm trong khoảng độ dài ký tự giữa 8 và 30");
-                    request.getRequestDispatcher("register.jsp").forward(request, response);
-                    return;
-                } else if (!validateUsername(username)) {
+                if (!validateUsername(username)) {
                     request.setAttribute("errorUsername", "Tên đăng nhập không hợp lệ");
                     request.getRequestDispatcher("register.jsp").forward(request, response);
                     return;
                 }
-                if (email.equals("")) {
-                    request.setAttribute("errorEmail", "Vui lòng nhập email");
-                    request.getRequestDispatcher("register.jsp").forward(request, response);
-                    return;
-                } else if (!validateEmail(email)) {
+                if (!validateEmail(email)) {
                     request.setAttribute("errorEmail", "Email không hợp lệ");
                     request.getRequestDispatcher("register.jsp").forward(request, response);
                     return;
                 }
-                if (password.equals("")) {
-                    request.setAttribute("errorPassword", "Vui lòng nhập mật khẩu");
-                    request.getRequestDispatcher("register.jsp").forward(request, response);
-                    return;
-                } else if (password.length() < 8 || password.length() > 16) {
-                    request.setAttribute("errorPassword", "Sử dụng 8 - 16 ký tự cho mật khẩu của bạn");
-                    request.getRequestDispatcher("register.jsp").forward(request, response);
-                    return;
-                } else if (!validatePassword(password)) {
+
+                if (!validatePassword(password)) {
                     request.setAttribute("errorPassword", "Mật khẩu không hợp lệ");
                     request.getRequestDispatcher("register.jsp").forward(request, response);
                     return;
                 }
-                if (confirmPassword.equals("")) {
-                    request.setAttribute("errorConfirmPass", "Vui lòng nhập mật khẩu xác nhận");
-                    request.getRequestDispatcher("register.jsp").forward(request, response);
-                    return;
-                } else if (!validatePassword(confirmPassword)) {
+                if (!validatePassword(confirmPassword)) {
                     request.setAttribute("errorConfirmPass", "Mật khẩu nhập lại không hợp lệ");
                     request.getRequestDispatcher("register.jsp").forward(request, response);
-                    return;
                 } else if (!confirmPassword.equals(password)) {
                     request.setAttribute("errorConfirmPass", "Mật khẩu nhập không đúng");
                     request.getRequestDispatcher("register.jsp").forward(request, response);
-                    return;
                 }
             }
         } else {
             if (username.equals(user.getUsername())) {
                 request.setAttribute("errorUsername", "Tên đăng nhập đã tồn tại");
                 request.getRequestDispatcher("register.jsp").forward(request, response);
-                return;
             } else if (email.equals(user.getEmail())) {
                 request.setAttribute("errorEmail", "Email đã được sử dụng");
                 request.getRequestDispatcher("register.jsp").forward(request, response);
-                return;
             }
         }
 
