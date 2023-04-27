@@ -1975,11 +1975,6 @@ legend + * {
     font: inherit
 }
 
-::-webkit-file-upload-button {
-    font: inherit;
-    -webkit-appearance: button
-}
-
 output {
     display: inline-block
 }
@@ -3663,14 +3658,6 @@ progress {
     }
 }
 
-.form-control[type=file] {
-    overflow: hidden
-}
-
-.form-control[type=file]:not(:disabled):not([readonly]) {
-    cursor: pointer
-}
-
 .form-control:focus {
     color: #515184;
     background-color: #fff;
@@ -3718,31 +3705,6 @@ progress {
     background-color: #dde0e3
 }
 
-.form-control::-webkit-file-upload-button {
-    padding: .375rem .75rem;
-    margin: -.375rem -.75rem;
-    margin-inline-end: .75rem;
-    color: #515184;
-    background-color: #e9ecef;
-    pointer-events: none;
-    border-color: inherit;
-    border-style: solid;
-    border-width: 0;
-    border-inline-end-width: 1px;
-    border-radius: 0;
-    transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out
-}
-
-@media (prefers-reduced-motion: reduce) {
-    .form-control::-webkit-file-upload-button {
-        transition: none
-    }
-}
-
-.form-control:hover:not(:disabled):not([readonly])::-webkit-file-upload-button {
-    background-color: #dde0e3
-}
-
 .form-control-plaintext {
     display: block;
     width: 100%;
@@ -3773,12 +3735,6 @@ progress {
     margin-inline-end: .5rem
 }
 
-.form-control-sm::-webkit-file-upload-button {
-    padding: .25rem .5rem;
-    margin: -.25rem -.5rem;
-    margin-inline-end: .5rem
-}
-
 .form-control-lg {
     min-height: calc(1.5em + 1rem + 2px);
     padding: .5rem 1rem;
@@ -3787,12 +3743,6 @@ progress {
 }
 
 .form-control-lg::file-selector-button {
-    padding: .5rem 1rem;
-    margin: -.5rem -1rem;
-    margin-inline-end: 1rem
-}
-
-.form-control-lg::-webkit-file-upload-button {
     padding: .5rem 1rem;
     margin: -.5rem -1rem;
     margin-inline-end: 1rem
@@ -13487,6 +13437,7 @@ a.active, a:focus, a:hover {
     }
 }
 
+
 .main-content {
     background-color: #fbfcfe
 }
@@ -14940,7 +14891,6 @@ body:not(.theme-full) .main-content .middle-sidebar-bottom.header-padding {
     -o-transition: opacity .3s linear, left .3s ease-out;
     transition: opacity .3s linear, left .3s ease-out
 }
-
 .modal.right.fade .modal-dialog {
     right: -280px;
     -webkit-transition: opacity .3s linear, right .3s ease-out;
@@ -15435,59 +15385,6 @@ body:not(.theme-full) .main-content .middle-sidebar-bottom.header-padding {
     height: 60px;
     line-height: 60px
 }
-
-.input-file {
-    width: .1px;
-    height: .1px;
-    opacity: 0;
-    overflow: hidden;
-    position: absolute;
-    z-index: -1
-}
-
-.input-file + .js-labelFile {
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
-    padding: 0 10px;
-    cursor: pointer;
-    font-weight: 600;
-    font-size: 14px;
-    line-height: 40px;
-    vertical-align: middle;
-    padding: 10px
-}
-
-.input-file + .js-labelFile.btn-tertiary {
-    color: #555;
-    padding: 0;
-    line-height: 40px;
-    width: 300px;
-    margin: auto;
-    display: block;
-    border: 2px solid #555
-}
-
-.input-file + .js-labelFile.btn-tertiary:focus, .input-file + .js-labelFile.btn-tertiary:hover {
-    color: #888;
-    border-color: #888
-}
-
-.input-file + .js-labelFile i {
-    font-size: 24px;
-    position: relative;
-    top: 5px;
-    display: inline-block
-}
-
-.input-file + .js-labelFile i.large-icon {
-    font-size: 42px
-}
-
-.input-file + .js-labelFile.has-file i {
-    display: none
-}
-
 .subscribe-widget:after {
     background-image: url(../images/paper-plane.png);
     background-size: 200px;

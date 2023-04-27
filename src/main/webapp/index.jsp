@@ -15,7 +15,6 @@
     <link rel="stylesheet" href="css/emoji.css">
 
     <link rel="stylesheet" href="css/lightbox.css">
-
 </head>
 
 <body class="color-theme-blue mont-font loaded">
@@ -30,7 +29,6 @@
     <!-- navigation left -->
     <%@include file="navigation_left.jsp"%>
     <!-- navigation left -->
-
     <!-- main content -->
     <div class="main-content right-chat-active">
 
@@ -68,7 +66,7 @@
                     <div class="col-xl-8 col-xxl-9 col-lg-8">
                         <div class="card w-100 shadow-xss rounded-xxl border-0 ps-4 pt-4 pe-4 pb-3 mb-3">
                             <div class="card-body p-0">
-                                <a href="#"
+                                <a href="create-blog.jsp"
                                    class=" font-xssss fw-600 text-grey-500 card-body p-0 d-flex align-items-center"><i
                                         class="btn-round-sm font-xs text-primary feather-edit-3 me-2 bg-greylight"></i>Tạo
                                     bài viết</a>
@@ -82,6 +80,7 @@
                                           cols="30" rows="10" placeholder="Bạn đang nghĩ gì vậy?"></textarea>
                             </div>
                         </div>
+
                         <div class="card w-100 shadow-xss rounded-xxl border-0 p-4 mb-3">
                             <div class="card-body p-0 d-flex">
                                 <figure class="avatar me-3"><img src="images/user-7.png" alt="image"
