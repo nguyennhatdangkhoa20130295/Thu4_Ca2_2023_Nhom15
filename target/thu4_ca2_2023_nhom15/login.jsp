@@ -23,6 +23,8 @@
 
 <div class="preloader" style="display: none;"></div>
 <%@include file="header.jsp"%>
+<% String error = (String) request.getAttribute("error");
+    if(error != null) System.out.println(error);%>
 <div class="main-wrap">
   <div class="row">
     <div class="col-xl-5 d-none d-xl-block p-0 vh-100 bg-image-cover bg-no-repeat" style="background-image: url(images/login-bg.jpg);"></div>
@@ -30,7 +32,7 @@
       <div class="card shadow-none border-0 ms-auto me-auto login-card">
         <div class="card-body rounded-0 text-left">
           <h2 class="fw-700 display1-size display2-md-size mb-3">Login into <br>your account</h2>
-          <form form action="http://139.180.129.238:5501/api/users" method="post">
+          <form form action="/Thu4_Ca2_2023_Nhom15/login" method="post">
 
             <div class="form-group icon-input mb-3">
               <i class="font-sm ti-email text-grey-500 pe-0"></i>
@@ -70,18 +72,19 @@
         <div class="card shadow-none rounded-0 w-100 p-2 pt-3 border-0">
           <div class="card-body rounded-0 text-left p-3">
             <h2 class="fw-700 display1-size display2-md-size mb-4">Login into <br>your account</h2>
-            <form action="http://139.180.129.238:5501/api/users/login" method="post">
+            <form action="/Thu4_Ca2_2023_Nhom15/login" method="post">
 
               <div class="form-group icon-input mb-3">
                 <i class="font-sm ti-email text-grey-500 pe-0"></i>
                 <input name="uname" type="text" class="style2-input ps-5 form-control text-grey-900 font-xsss fw-600" placeholder="Your Email Address">
               </div>
+
               <div class="form-group icon-input mb-1">
                 <input name="passw" type="Password" class="style2-input ps-5 form-control text-grey-900 font-xss ls-3" placeholder="Password">
                 <i class="font-sm ti-lock text-grey-500 pe-0"></i>
               </div>
-              <div class="text-left mb-3">
-                <div class="form-group mb-1"><a href="#" class="form-control text-center style2-input text-white fw-600 bg-dark border-0 p-0 ">Login</a></div>
+              <div class="text-left mb-3">s
+                <div class="form-group mb-1"><button type="submit" class="form-control text-center style2-input text-white fw-600 bg-dark border-0 p-0 ">Login</button></div>
                 <a href="forgot.html" class="fw-600 font-xsss text-grey-700 mt-1 float-right">Forgot your Password?</a>
               </div>
             </form>
@@ -156,10 +159,14 @@
 </div>
 
 
-
+<script>
+  <%if(error != null) {%>
+    alert('<%=error.toString()%>')
+  <%}%>
+</script>
 <script src="js/plugin.js"></script>
 <script src="js/scripts.js"></script>
 
+</body>
 
-
-</body></html>
+</html>
