@@ -34,13 +34,16 @@
             <div class="card shadow-none border-0 ms-auto me-auto login-card">
                 <div class="card-body rounded-0 text-left">
                     <h2 class="fw-700 display1-size display2-md-size mb-4">Nhập mã xác thực đăng ký tài khoản</h2>
+<%--                    7. Hiển thị form nhập mã xác thực và yêu cầu nhập mã xác thực được cung cấp trong email.--%>
                     <form action="verify_register" method="post">
                         <div class="form-group icon-input mb-3">
                             <i class="font-sm ti-user text-grey-500 pe-0"></i>
+<%--                            8. Người dùng nhập mã xác thực.--%>
                             <input type="text" name="authcode"
                                    class="style2-input ps-5 form-control text-grey-900 font-xsss fw-600"
                                    placeholder="Nhập mã vào ô này">
                             <p style="color: red; margin-top: 10px;"><%=request.getAttribute("errorVerify") != null ? request.getAttribute("errorVerify") : ""%>
+<%--                                9. Người dùng nhấn chọn nút “Xác nhận”.--%>
                                 <button type="submit"
                                         class="mt-3 form-control text-center style2-input text-white fw-600 bg-dark border-0 p-0">
                                     Xác nhận
