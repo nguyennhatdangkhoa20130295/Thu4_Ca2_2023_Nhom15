@@ -56,9 +56,9 @@
                 <div class="row">
                     <main class="main" style="z-index: 1;margin: 50px 0 0 50px;height: 1000px; width: 1100px;background-color: #FFFFFF" id="top">
                         <div class="container-fluid px-0" data-layout="container">
+                        <%--3. Người dùng nhập thông tin gồm tiêu đề, mô tả, hình ảnh, danh mục và nhấn nút đăng bài viết--%>
                             <form name="item" method="post" enctype="multipart/form-data" class="mb-9">
-                                <% Blog b = null;
-                                %>
+                                <% Blog b = null;%>
                                 <div class="row g-3 flex-between-end mb-5">
                                     <div class="col-auto">
                                         <h2 class="mb-2" style="margin-left: 300px;">Tạo bài viết</h2>
@@ -756,6 +756,7 @@
         }
     }
 </script>
+<%--4 Lấy thông tin bài viết người dùng đã nhập gọi đến lớp InsertBlogController--%>
 <script>
     $("button[type='submit']").click(function (e) {
         e.preventDefault();
@@ -788,8 +789,7 @@
                 imgFile: imgFile,
             },
             success: function () {
-                if (id.length < 1)
-                    alert("Thêm bài viết mới thành công");
+                alert("Thêm bài viết mới thành công");
                 window.location.href = "index.jsp"
             }
         })
