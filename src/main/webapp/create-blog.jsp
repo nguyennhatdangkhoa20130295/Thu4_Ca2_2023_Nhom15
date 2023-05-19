@@ -789,8 +789,9 @@
                 imgFile: imgFile,
             },
             success: function () {
-                    alert("Thêm bài viết mới thành công");
+                alert("Thêm bài viết mới thành công");
                 window.location.href = "index.jsp"
+            }
         })
     })
 </script>
