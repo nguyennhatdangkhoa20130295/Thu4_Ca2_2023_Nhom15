@@ -31,7 +31,7 @@ public class Login extends HttpServlet {
         // end 6
 
 
-        String apiUrl = "http://localhost:5501/api/users/login";
+        String apiUrl = "http://139.180.129.238:5501/api/users/login";
         String requestBody = "username=" + username + "&password=" + password;
 
         HttpURLConnection connection = null;
@@ -84,11 +84,11 @@ public class Login extends HttpServlet {
                     switch (user.getRole()) {
                         // 12.1.	Nếu user là tài khoản thường (role = 0) thì chuyển về trang index.jsp
                         case 0: // Chuyển sang trang dành cho user
-                            response.sendRedirect("http://localhost:8080/Thu4_Ca2_2023_Nhom15/");
+                            response.sendRedirect("/Thu4_Ca2_2023_Nhom15/");
                             break;
                             //12.2.	Nếu user là tài khoản admin (role = 1) thì chuyển về trang admin.jsp
                         case 1: // Chuyển sang trang dành cho admin (Không có trang admin nên chuyển đỡ về trang user luôn)
-                            response.sendRedirect("http://localhost:8080/Thu4_Ca2_2023_Nhom15/");
+                            response.sendRedirect("/Thu4_Ca2_2023_Nhom15/");
                             break;
                     }
                 }
