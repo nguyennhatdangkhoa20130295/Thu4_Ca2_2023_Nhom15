@@ -3,14 +3,14 @@ package vn.edu.hcmuaf.fit.bean;
 import java.io.Serializable;
 
 public class Blog implements Serializable {
-    String id;
-    String user_id;
+    int id;
+    int user_id;
     String created_at;
     String updated_at;
-    String status;
+    int status;
     String title;
     String description;
-    String category_id;
+    int category_id;
     String name;
 
     String image;
@@ -18,7 +18,7 @@ public class Blog implements Serializable {
     public Blog() {
     }
 
-    public Blog(String id, String user_id, String created_at, String updated_at, String status, String title, String description, String category_id, String name, String image) {
+    public Blog(int id, int user_id, String created_at, String updated_at, int status, String title, String description, int category_id, String name, String image) {
         this.id = id;
         this.user_id = user_id;
         this.created_at = created_at;
@@ -31,19 +31,19 @@ public class Blog implements Serializable {
         this.image = image;
     }
 
-    public String getId() {
+    public int getId() {
         return id;
     }
 
-    public void setId(String id) {
+    public void setId(int id) {
         this.id = id;
     }
 
-    public String getUser_id() {
+    public int getUser_id() {
         return user_id;
     }
 
-    public void setUser_id(String user_id) {
+    public void setUser_id(int user_id) {
         this.user_id = user_id;
     }
 
@@ -63,11 +63,11 @@ public class Blog implements Serializable {
         this.updated_at = updated_at;
     }
 
-    public String getStatus() {
+    public int getStatus() {
         return status;
     }
 
-    public void setStatus(String status) {
+    public void setStatus(int status) {
         this.status = status;
     }
 
@@ -87,11 +87,11 @@ public class Blog implements Serializable {
         this.description = description;
     }
 
-    public String getCategory_id() {
+    public int getCategory_id() {
         return category_id;
     }
 
-    public void setCategory_id(String category_id) {
+    public void setCategory_id(int category_id) {
         this.category_id = category_id;
     }
 

@@ -18,22 +18,18 @@ public class InsertBlogController extends HttpServlet {
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         request.setCharacterEncoding("UTF-8");
-        HttpSession session = request.getSession();
-        User user =  new User(100, "baohoangkhoa", "12345678", "abc@gmail.com");
-        session.setAttribute("user", user);
-        User users = (User) request.getSession().getAttribute("user");
-
-        String user_id = String.valueOf(users.getId());
+        User user = new User(1, "bao123", "$10$3aQdohsFip8tJd9pwjNMrOCvm2hbx..gYlK5iGTsPT/Qg6.kfdUI.","baotaolao9819999@gmail.com");
+        int user_id = user.getId();
         String title = request.getParameter("title");
         String description = request.getParameter("description");
-        String category_id = request.getParameter("cateid");
+        int category_id = Integer.parseInt(request.getParameter("cateid"));
         String image = request.getParameter("image");
         String oldImg = request.getParameter("oldImg");
 
 
         BlogService service = new BlogService();
 
-        service.insertBlog(user_id, "1", title, description, category_id, image);
+        service.insertBlog(user_id, title, description, category_id, image);
         removeOldImg(oldImg, request);
         copyImage(request, image);
         response.sendRedirect("index.jsp");
