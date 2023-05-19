@@ -12,7 +12,8 @@ public class BlogService {
         return blogService;
     }
 
-    public static void insertBlog(String user_id, String status, String title, String description, String category_id,String image){
-        new BlogDAO().insertBlog(user_id, status, title, description, category_id, image);
+//    6. BlogService gọi đến BlogDAO để thực hiện thêm bài viết mới
+    public static void insertBlog(int user_id, String title, String description, int category_id,String image){
+        new BlogDAO().insertBlog(user_id, title, description, category_id, image);
     }
 }
