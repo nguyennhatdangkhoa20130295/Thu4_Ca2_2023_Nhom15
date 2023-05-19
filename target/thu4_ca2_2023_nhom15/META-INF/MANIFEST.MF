@@ -1,10 +1,5 @@
 Manifest-Version: 1.0
 Created-By: IntelliJ IDEA
-<<<<<<< HEAD
-Built-By: ASUS
-Build-Jdk: Oracle OpenJDK version 11
-=======
 Built-By: baota
 Build-Jdk: Amazon Corretto version 18.0.2
->>>>>>> fe5346a683ae80454c4bb1b9d37cfcf02614a6a2
 

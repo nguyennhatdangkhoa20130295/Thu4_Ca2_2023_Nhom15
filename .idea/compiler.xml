@@ -8,6 +8,7 @@
         <outputRelativeToContentRoot value="true" />
         <module name="Thu4_Ca2_2023_Nhom15" />
         <module name="thu4_ca2_2023_nhom15" />
+        <module name="CNPMWEB" />
       </profile>
     </annotationProcessing>
   </component>

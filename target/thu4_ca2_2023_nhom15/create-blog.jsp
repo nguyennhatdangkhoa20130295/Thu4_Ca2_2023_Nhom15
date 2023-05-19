@@ -789,8 +789,7 @@
                 imgFile: imgFile,
             },
             success: function () {
-                if (id.length < 1)
-                    alert("Thêm bài viết mới thành công");
+                alert("Thêm bài viết mới thành công");
                 window.location.href = "index.jsp"
             }
         })
