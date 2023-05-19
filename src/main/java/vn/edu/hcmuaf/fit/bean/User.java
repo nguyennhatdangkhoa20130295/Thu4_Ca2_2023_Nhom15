@@ -8,6 +8,10 @@ public class User implements Serializable {
     private String password;
     private String email;
 
+    private int role;
+
+    private int condition;
+
     public User() {
     }
 
@@ -16,6 +20,14 @@ public class User implements Serializable {
         this.username = username;
         this.password = password;
         this.email = email;
+    }
+
+    public User(int id, String username, String email, int role, int condition) {
+        this.id = id;
+        this.username = username;
+        this.email = email;
+        this.role = role;
+        this.condition = condition;
     }
 
     public int getId() {
@@ -48,6 +60,22 @@ public class User implements Serializable {
 
     public void setEmail(String email) {
         this.email = email;
+    }
+
+    public int getRole() {
+        return role;
+    }
+
+    public void setRole(int role) {
+        this.role = role;
+    }
+
+    public int getCondition() {
+        return condition;
+    }
+
+    public void setCondition(int condition) {
+        this.condition = condition;
     }
 
     @Override
