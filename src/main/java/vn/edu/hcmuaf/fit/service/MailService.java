@@ -17,6 +17,7 @@ public class MailService {
         }
         return mailService;
     }
+    // 5.2.6.2.1.1 Tạo mã xác thực qua phương thức getRandom().
     public String getRandom(){
         Random ran = new Random();
         int number = ran.nextInt(999999);
